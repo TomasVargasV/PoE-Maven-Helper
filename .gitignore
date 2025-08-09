@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.venv/
+env/
+
+# Installs / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# PyInstaller
+*.spec
+
+# Test / coverage
+htmlcov/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+
+# Editor / OS
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+.DS_Store
+Thumbs.db
+
+# Logs and runtime files
+*.log
+*.sqlite3
+
+# macOS icon / swap files
+*.swp
+*.swo
+
+# Optional: artefatos de node (se algum dia tiver frontend)
+node_modules/
+
+# Arquivos sensíveis que você não quer commitar
+.env
+credentials.json
