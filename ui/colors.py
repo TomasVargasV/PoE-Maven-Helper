@@ -1,0 +1,2 @@
+INVISIBLE_COLOR = "magenta"
+VISIBLE_COLOR = "white"
