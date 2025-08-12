@@ -35,11 +35,9 @@ def main():
             if sequence.should_auto_clear():
                 sequence.clear()
                 display.update_text(sequence.get_sequence())
-                # display.set_visible(False)
             root.after(POLL_INTERVAL_MS, poll_queue)
 
     root.after(POLL_INTERVAL_MS, poll_queue)
-
     def on_close():
         try:
             listener.stop()

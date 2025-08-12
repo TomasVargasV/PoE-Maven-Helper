@@ -1,8 +1,16 @@
 from pynput import keyboard
+import win32gui
 from . import events
 
 def start_listening(event_queue):
     def on_press(key):
+        
+        hwnd = win32gui.GetForegroundWindow()
+        title = win32gui.GetWindowText(hwnd)
+
+        if "Path of Exile" not in title:
+            return
+
         try:
             if key == keyboard.Key.left:
                 event_queue.put(events.LEFT)
@@ -15,8 +23,9 @@ def start_listening(event_queue):
             elif key == keyboard.Key.esc:
                 event_queue.put(events.CLEAR)
         except Exception as e:
-            print("Error in keyboard listener:", e)
+            print("Erro no listener de teclado:", e)
 
     listener = keyboard.Listener(on_press=on_press)
     listener.start()
     return listener
+

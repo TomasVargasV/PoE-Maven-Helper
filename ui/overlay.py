@@ -78,6 +78,9 @@ def create_overlay_window(border_thickness=5, border_color="red"):
 
     root.update_idletasks()
     hwnd_root = win32gui.FindWindow(None, "PoE Maven Helper")
+    hwnd_poe = win32gui.FindWindow(None, "Path of Exile")
+    if hwnd_poe:
+        win32gui.SetParent(hwnd_root, hwnd_poe)
     win32gui.MoveWindow(hwnd_root, 0, 0, screen_w, screen_h, True)
     make_clickthrough(hwnd_root)
 
